@@ -20,10 +20,14 @@ app.use(cors({
     origin: [
         'http://localhost:5173',  // frontend local
         'http://localhost:5174',  // admin local
-        'tibet417-frontend.vercel.app', // replace with your actual frontend Vercel URL
-        'tibet417-admin.vercel.app',    // replace with your actual admin Vercel URL
+        'https://tibet417-frontend.vercel.app', // frontend production
+        'https://tibet417-admin.vercel.app'     // admin production
     ],
-    credentials: true
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    preflightContinue: false,
+    optionsSuccessStatus: 204
 }))
 
 // api endpoints
