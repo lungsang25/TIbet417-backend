@@ -16,7 +16,15 @@ connectCloudinary()
 
 // middlewares
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+    origin: [
+        'http://localhost:5173',  // frontend local
+        'http://localhost:5174',  // admin local
+        'tibet417-frontend.vercel.app', // replace with your actual frontend Vercel URL
+        'tibet417-admin.vercel.app',    // replace with your actual admin Vercel URL
+    ],
+    credentials: true
+}))
 
 // api endpoints
 app.use('/api/user',userRouter)
