@@ -6,7 +6,7 @@
       "use": "@vercel/node",
       "config": {
         "includeFiles": ["**"],
-        "installCommand": "npm install --force"
+        "buildCommand": "rm -f package-lock.json && npm install --no-package-lock"
       }
     }
   ],
