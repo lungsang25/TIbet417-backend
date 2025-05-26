@@ -1,15 +1,5 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "server.js",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": ["**"],
-        "buildCommand": "rm -f package-lock.json && npm install --no-package-lock"
-      }
-    }
-  ],
   "routes": [
     {
       "src": "/api/(.*)",
