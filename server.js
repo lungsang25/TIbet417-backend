@@ -25,10 +25,15 @@ app.use(cors({
     ],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'Origin', 'Accept', 'X-Requested-With'],
+    exposedHeaders: ['Content-Type', 'Authorization'],
+    maxAge: 3600,
     preflightContinue: false,
     optionsSuccessStatus: 204
 }))
+
+// Enable pre-flight requests for all routes
+app.options('*', cors())
 
 // api endpoints
 app.use('/api/user',userRouter)
