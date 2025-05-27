@@ -29,16 +29,8 @@
   ],
   "rewrites": [
     {
-      "source": "/api/user/admin",
-      "destination": "/server.js"
-    },
-    {
-      "source": "/api/(.*)",
-      "destination": "/server.js"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/server.js"
+      "source": "/api/:path*",
+      "destination": "/api/:path*"
     }
   ]
 }
