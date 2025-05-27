@@ -16,9 +16,13 @@
       "dest": "/server.js"
     }
   ],
-  "build": {
-    "env": {
-      "NODE_ENV": "production"
+  "builds": [
+    {
+      "src": "server.js",
+      "use": "@vercel/node",
+      "config": {
+        "installCommand": "npm install --force"
+      }
     }
-  }
+  ]
 }
