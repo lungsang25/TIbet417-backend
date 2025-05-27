@@ -29,8 +29,12 @@
   ],
   "rewrites": [
     {
+      "source": "/api/user/admin",
+      "destination": "/server.js"
+    },
+    {
       "source": "/api/(.*)",
-      "destination": "/api/$1"
+      "destination": "/server.js"
     },
     {
       "source": "/(.*)",
