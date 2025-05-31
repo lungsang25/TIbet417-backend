@@ -14,30 +14,29 @@
         },
         {
           "key": "Access-Control-Allow-Methods",
-          "value": "GET, POST, PUT, DELETE, OPTIONS"
+          "value": "GET, POST, PUT, DELETE, OPTIONS, PATCH"
         },
         {
           "key": "Access-Control-Allow-Headers",
-          "value": "Content-Type, Authorization, Origin, Accept, X-Requested-With"
+          "value": "Content-Type, Authorization, Origin, Accept, X-Requested-With, X-CSRF-Token"
         },
         {
           "key": "Access-Control-Max-Age",
-          "value": "3600"
+          "value": "86400"
         }
       ]
     }
   ],
+  "functions": {
+    "server.js": {
+      "maxDuration": 30,
+      "memory": 3008,
+      "includeFiles": "config/**"
+    }
+  },
   "rewrites": [
     {
-      "source": "/api/user/admin",
-      "destination": "/server.js"
-    },
-    {
       "source": "/api/(.*)",
-      "destination": "/server.js"
-    },
-    {
-      "source": "/(.*)",
       "destination": "/server.js"
     }
   ]
